@@ -1,0 +1,32 @@
+##########
+# Environment Variables
+##########
+# Look in current directory for executables
+export PATH=$PATH: .
+##########
+# Aliases
+##########
+alias cdd="cd .."
+alias las="ls _A"
+alias lsl="ls -l"
+alias lsal="ls -Al"
+alias targz=targzfunc
+alias untar=untarfunc
+# Edit the ??? in this line
+alias trash="mv -t ~/.TRASH"
+alias rmtrash="rm -rf ~/.TRASH/*"
+##########
+# Functions
+##########
+# Function to tar -zcvf a directory
+funtion targzfunc() {
+	VAR=$1;
+	VAR=${VAR%/};
+	tar -zcvf "$VAR.tar.gz" ./"$VAR
+}
+# Function to tar -xvf a .tar.gz file.
+function untarfunc() {
+	VAR=$1
+	VAR=${VAR}
+	tar -xvf ./"$VAR"
+}
